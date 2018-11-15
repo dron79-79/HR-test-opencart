@@ -616,6 +616,14 @@ class ControllerCommonColumnLeft extends Controller {
 				);	
 			}
 			
+			if ($this->user->hasPermission('access', 'tool/uploadxml')) {
+				$tool[] = array(
+					'name'	   => $this->language->get('text_uploadxml'),
+					'href'     => $this->url->link('tool/uploadxml', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);	
+			}
+			
 			if ($this->user->hasPermission('access', 'tool/backup')) {
 				$tool[] = array(
 					'name'	   => $this->language->get('text_backup'),
