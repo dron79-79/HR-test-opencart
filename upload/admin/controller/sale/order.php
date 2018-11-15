@@ -1826,6 +1826,7 @@ class ControllerSaleOrder extends Controller {
 		$data['text_shipping_address'] = $this->language->get('text_shipping_address');
 		$data['text_shipping_method'] = $this->language->get('text_shipping_method');
 		$data['text_sku'] = $this->language->get('text_sku');
+		$data['text_сomposition'] = $this->language->get('text_сomposition');
 		$data['text_upc'] = $this->language->get('text_upc');
 		$data['text_ean'] = $this->language->get('text_ean');
 		$data['text_jan'] = $this->language->get('text_jan');
@@ -1967,6 +1968,7 @@ class ControllerSaleOrder extends Controller {
 							'quantity' => $product['quantity'],
 							'location' => $product_info['location'],
 							'sku'      => $product_info['sku'],
+							'сomposition' => $product_info['сomposition'],
 							'upc'      => $product_info['upc'],
 							'ean'      => $product_info['ean'],
 							'jan'      => $product_info['jan'],

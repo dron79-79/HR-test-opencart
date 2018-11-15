@@ -18,6 +18,7 @@ class ModelCatalogProduct extends Model {
 				'tag'              => $query->row['tag'],
 				'model'            => $query->row['model'],
 				'sku'              => $query->row['sku'],
+				'сomposition'      => $query->row['сomposition'],
 				'upc'              => $query->row['upc'],
 				'ean'              => $query->row['ean'],
 				'jan'              => $query->row['jan'],
@@ -139,6 +140,7 @@ class ModelCatalogProduct extends Model {
 			if (!empty($data['filter_name'])) {
 				$sql .= " OR LCASE(p.model) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
 				$sql .= " OR LCASE(p.sku) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
+				$sql .= " OR LCASE(p.сomposition) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
 				$sql .= " OR LCASE(p.upc) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
 				$sql .= " OR LCASE(p.ean) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
 				$sql .= " OR LCASE(p.jan) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
@@ -496,6 +498,7 @@ class ModelCatalogProduct extends Model {
 			if (!empty($data['filter_name'])) {
 				$sql .= " OR LCASE(p.model) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
 				$sql .= " OR LCASE(p.sku) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
+				$sql .= " OR LCASE(p.сomposition) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
 				$sql .= " OR LCASE(p.upc) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
 				$sql .= " OR LCASE(p.ean) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
 				$sql .= " OR LCASE(p.jan) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";

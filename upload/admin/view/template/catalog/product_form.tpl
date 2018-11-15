@@ -110,6 +110,12 @@
                   <input type="text" name="sku" value="<?php echo $sku; ?>" placeholder="<?php echo $entry_sku; ?>" id="input-sku" class="form-control" />
                 </div>
               </div>
+	      <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-сomposition"><span data-toggle="tooltip" title="<?php echo $help_сomposition; ?>"><?php echo $entry_сomposition; ?></span></label>
+                <div class="col-sm-10">
+                  <input type="text" name="сomposition" value="<?php echo $сomposition; ?>" placeholder="<?php echo $entry_сomposition; ?>" id="input-сomposition" class="form-control" />
+                </div>
+              </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-upc"><span data-toggle="tooltip" title="<?php echo $help_upc; ?>"><?php echo $entry_upc; ?></span></label>
                 <div class="col-sm-10">

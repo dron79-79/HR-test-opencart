@@ -41,6 +41,7 @@ $_['text_website']               = 'Web Site:';
 $_['text_invoice_no']            = 'Invoice No.:';
 $_['text_invoice_date']          = 'Invoice Date:';
 $_['text_sku']                   = 'SKU:';
+$_['text_сomposition']           = 'Composition:';
 $_['text_upc']                   = 'UPC:';
 $_['text_ean']                   = 'EAN:';
 $_['text_jan']                   = 'JAN:';

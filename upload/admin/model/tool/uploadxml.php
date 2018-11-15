@@ -24,6 +24,8 @@ class ModelToolUploadxml extends Model {
 	    $category_id = '20';
 	    $store_id = 0;
 	    $layout_id = 2;
+	    $attribute_id = 2;
+	    $language_id = 1;
 	    $offer = $context->getResult()['offer'][0];
 	    //print_r($offer);die();
 	    
@@ -32,18 +34,25 @@ class ModelToolUploadxml extends Model {
 	    $product_id = $this->db->getLastId(); // переработать код
 	    
 	    
-	    $this->db->query("INSERT INTO `" . DB_PREFIX . "product_to_store` SET `product_id` = '" . $this->db->escape($product_id) 
+	    $this->db->query("INSERT INTO `" . DB_PREFIX . "product_to_store` SET `product_id` = '" . (int)$product_id 
 		     . "', `store_id` = '" . $this->db->escape($store_id )."'" );
 	  
-	    $this->db->query("INSERT INTO `" . DB_PREFIX . "product_to_category` SET `product_id` = '" . $this->db->escape($product_id) 
+	    $this->db->query("INSERT INTO `" . DB_PREFIX . "product_to_category` SET `product_id` = '" . (int)$product_id 
 		      . "', `category_id` = '" . $this->db->escape($category_id)."'" );
 	    
-	    $this->db->query("INSERT INTO `" . DB_PREFIX . "product_description` SET `product_id` = '" . $this->db->escape($product_id) 
+	    $this->db->query("INSERT INTO `" . DB_PREFIX . "product_description` SET `product_id` = '" . (int)$product_id 
 		    . "', `name` = '" . $this->db->escape($offer['name'])  
 		    . "', `description` = '" . $this->db->escape($offer['description']). "'");
-	    $this->db->query("INSERT INTO `" . DB_PREFIX . "product_to_layout` SET `product_id` = '" . $this->db->escape($product_id) 
+	    $this->db->query("INSERT INTO `" . DB_PREFIX . "product_to_layout` SET `product_id` = '" . (int)$product_id 
 		   . "', `store_id` = '" . $this->db->escape($store_id )
-		    . "', `layout_id` = '" . $this->db->escape($offer[$layout_id])."'" );
+		    . "', `layout_id` = '" . $this->db->escape($layout_id)."'" );
+	    if (!empty($offer['series'])){
+		 $this->db->query("INSERT INTO " . DB_PREFIX . "product_attribute SET product_id = '" . (int)$product_id 
+			 . "', attribute_id = '" . (int)$attribute_id 
+			 . "', language_id = '" . (int)$language_id 
+			 . "', text = '"  .  $this->db->escape($offer['series']) . "'");
+	    }
+	   
 	    
 	});
 	    
